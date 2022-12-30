@@ -5,9 +5,9 @@ Simple way to separate your storage by namespaces
 ## Setup
 
 ```
-$ npm install --save storage-ns
+$ npm install --save @qkudev/storage-ns
 # --- or ---
-$ yarn add storage-ns
+$ yarn add @qkudev/storage-ns
 ```
 
 ## Usage
