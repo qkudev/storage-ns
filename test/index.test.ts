@@ -47,16 +47,6 @@ describe('StorageNS', () => {
     expect([...s.values()]).toStrictEqual(['foo', 'bar']);
   });
 
-  it('should iterate over storage properly', () => {
-    s.setItem('key1', 'foo');
-    s.setItem('key2', 'bar');
-
-    expect([...s]).toStrictEqual([
-      ['key1', 'foo'],
-      ['key2', 'bar'],
-    ]);
-  });
-
   it('should clear properly', () => {
     s.setItem('foo', 'bar');
     s.clear();

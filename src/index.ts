@@ -1,3 +1,14 @@
+/**
+ * Namespaced storage
+ * @example
+ * const s1 = new StorageNS('ns1');
+ * const s2 = new StorageNS('ns2');
+ *
+ * s1.setItem('foo', 'bar');
+ * s2.setItem('foo', 'buz');
+ *
+ * s1.getItem('foo') === s2.getItem('foo') // false
+ */
 export class StorageNS implements Storage {
   constructor(
     public readonly prefix: string,
@@ -42,17 +53,6 @@ export class StorageNS implements Storage {
 
     this.storage.removeItem(prefixed);
   };
-
-  /**
-   * Enables iterating over storage with key/value tuple
-   */
-  *[Symbol.iterator](): IterableIterator<[string, string | null]> {
-    for (const key of this.keys()) {
-      const value = this.getItem(key);
-
-      yield [key, value];
-    }
-  }
 
   /**
    * Iterates over existing keys
