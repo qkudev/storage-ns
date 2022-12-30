@@ -30,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "storage-ns",
+  "name": "@qkudev/storage-ns",
   "author": "qkudev",
   "module": "dist/storage-ns.esm.js",
   "size-limit": [
