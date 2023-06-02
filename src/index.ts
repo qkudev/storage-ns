@@ -90,8 +90,19 @@ export class StorageNS implements Storage {
     if (i < 0) {
       throw new Error('Key index must be greater or equal to zero');
     }
+    let iter = this.keys();
+    let curr = iter.next();
+    let j = 0;
+    while (j < i && !curr.done) {
+      curr = iter.next();
+      j++;
+    }
 
-    return [...this.keys()][i] || null;
+    if (curr.value === undefined) {
+      return null;
+    }
+
+    return curr.value;
   };
 
   /**

@@ -3,6 +3,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "private": false,
   "files": [
     "dist",
     "src"
@@ -10,6 +11,10 @@
   "engines": {
     "node": ">=10"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "sideEffects": false,
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",

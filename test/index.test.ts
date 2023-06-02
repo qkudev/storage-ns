@@ -57,12 +57,15 @@ describe('StorageNS', () => {
 
   it('should return keys by indexes', () => {
     s.setItem('foo', 'bar');
+    s.setItem('bar', 'buzz');
+    s.setItem('buzz', 'foo');
 
-    const key = s.key(0);
-    expect(key).toEqual('foo');
-    expect(s.length).toEqual(1);
+    expect(s.key(0)).toEqual('foo');
+    expect(s.key(1)).toEqual('bar');
+    expect(s.key(2)).toEqual('buzz');
+    expect(s.length).toEqual(3);
 
-    expect(s.key(1)).toEqual(null);
+    expect(s.key(3)).toEqual(null);
   });
 
   it('should throw error on incorrect index', () => {
